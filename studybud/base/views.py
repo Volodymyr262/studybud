@@ -135,6 +135,7 @@ def updateRoom(request, pk):
         topic, created = Topic.objects.get_or_create(name=topic_name)
         room.name = request.POST.get('name')
         room.topic = topic
+        #comment
         room.description = request.POST.get('description')
         room.save()
         return redirect('home')
